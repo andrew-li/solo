@@ -1,5 +1,7 @@
 # Project Name #
 
+Twitch API Project
+
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
 
@@ -19,26 +21,48 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+  Most Popular Streamers on Twitch
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+  The audience is people who quickly want to find the most popular streamers on Twitch.tv in a given timeframe.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  The product is a website that will use the Twitch.tv API to get the most popular streamers on Twitch.tv over a given timeframe. 
+  Popularity will be based on the average viewer count every X minutes over a given time frame (since this project is a two day project, the given timeframe will have to be less than two days, but the idea is that the website can show the streamers with the highest average viewer count each month). 
+  There will be a list of the most popular streamers for all games, and also for specific games.
+
 ## Problem ##
   > Describe the problem your product solves.
+
+  When entering in Google Search the phrase "most popular streamers on twitch," there is no website (in the first three pages at least) that shows the most popular streamers for multiple games on Twitch.tv based on average viewer count. There may be some people who are curious about this statistic, so this website will show them this information.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
+  The website will continuously check every X minutes for a streamer's viewer count, then average this viewer count over the alotted time period.
+  By doing this, it will determine the most popular streamers and show it to the website visitor.
+
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+  "This website is so pointless."
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  Not easy at all.
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
+  "Why did I go to this website?"
+
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+
+  ...
+
