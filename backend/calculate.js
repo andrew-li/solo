@@ -28,7 +28,7 @@ var calculate = function() {
 
   //query crawl and crawl_streamer table to get viewer count for each streamer
   //only grab records within the number of previous hours
-  var NUM_PREVIOUS_HOURS = 24;
+  var NUM_PREVIOUS_HOURS = 1;
   var query = "select streamer_name, game_name, sum(viewer_count), count(*) from crawl "
     + "inner join crawl_streamer "
     + "on crawl.crawl_id = crawl_streamer.crawl_id "
