@@ -15,7 +15,7 @@ app.set('port', 3000);
 //serve the client files
 app.use(express.static(__dirname + "/../frontend"));
 
-//the following route should cause the server to perform a query and return the response
+//the following get request route should cause the server to perform a query and return the response
 var query_route = '/get/streamer_stats';
 app.get(query_route + '*', function(req, res){
 
@@ -26,7 +26,8 @@ app.get(query_route + '*', function(req, res){
     + " from streamer_stats"
     + " where game_name = '"
     + gameName + "'"
-    + " group by streamer_name";
+    + " group by streamer_name"
+    + " LIMIT 20";
 
   //perform the query and send the response containing the results embedded in an object
   connection.query(query, function(err, result){

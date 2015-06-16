@@ -1,1 +1,42 @@
-TEST
+<doctype! html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="services.js"></script>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+  </head>
+  <body ng-app="streamer" ng-controller="streamerControl">
+
+    <p>Show Top 20 Streamers on Twitch.tv by Average Viewer Count (updated every hour)</p>
+
+    <button ng-click="getStreamers('')">
+      All Games
+    </button>
+    <button ng-click="getStreamers('League of Legends')">
+      League of Legends
+    </button>
+    <button ng-click="getStreamers('Counter-Strike: Global Offensive')">
+      CS: GO
+    </button> 
+    <button ng-click="getStreamers('Dota 2')">
+      DOTA 2
+    </button> 
+    <button ng-click="getStreamers('Hearthstone: Heroes of Warcraft')">
+      Hearthstone: HoW
+    </button> 
+    <button ng-click="getStreamers('StarCraft II: Heart of the Swarm')">
+      Starcraft 2: HotS
+    </button>     
+
+    <ul>
+      <li ng-repeat="streamer in data.streamers | orderBy:'-avg_viewer_count'">
+
+        <div> {{streamer.streamer_name}}</div>
+
+        <div> {{streamer.avg_viewer_count}}</div>
+
+      </li>
+    </ul>
+
+  </body>
+</html>
