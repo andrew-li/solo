@@ -1,0 +1,18 @@
+table {
+  position: absolute;
+  border: 1px solid black;
+}
+table th {
+  width: 240px;
+  border: 1px solid black;
+}
+table td {
+  width: 240px;
+  border: 1px solid black;
+}
+table tr {
+  border: 1px solid black;
+}
+iframe {
+  float: right;
+}

@@ -26,8 +26,7 @@ app.get(query_route + '*', function(req, res){
     + " from streamer_stats"
     + " where game_name = '"
     + gameName + "'"
-    + " group by streamer_name"
-    + " LIMIT 20";
+    + " group by streamer_name";
 
   //perform the query and send the response containing the results embedded in an object
   connection.query(query, function(err, result){

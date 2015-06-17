@@ -2,12 +2,14 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-sanitize.js"></script>
     <script src="services.js"></script>
     <link rel='stylesheet' type='text/css' href='style.css'>
+    <title>Top 50 Streamers on Twitch</title>
   </head>
   <body ng-app="streamer" ng-controller="streamerControl">
 
-    <p>Show Top 20 Streamers on Twitch.tv by Average Viewer Count (updated every hour)</p>
+    <h2>Show Top 50 Streamers on Twitch.tv by Average Viewer Count (updated every hour)</h2>
 
     <button ng-click="getStreamers('')">
       All Games
@@ -28,15 +30,25 @@
       Starcraft 2: HotS
     </button>     
 
-    <ul>
-      <li ng-repeat="streamer in data.streamers | orderBy:'-avg_viewer_count'">
+    <table>
+      <tr>
 
-        <div> {{streamer.streamer_name}}</div>
+        <th>Streamer Name</th>
+        <th>Average Viewer Count</th>
 
-        <div> {{streamer.avg_viewer_count}}</div>
+      </tr>
+      <tr ng-repeat="streamer in data.streamers | orderBy:'-avg_viewer_count'">
 
-      </li>
-    </ul>
+        <td ng-click="getStreamerURL(streamer.streamer_name)"> {{streamer.streamer_name}} </td>
+        <td ng-click="getStreamerURL(streamer.streamer_name)"> {{streamer.avg_viewer_count}} </td>
+
+      </tr>
+    </table>
+
+    <iframe id="player" type="text/html" width="620" height="378"
+      src="{{trustSrc(data.url)}}"
+      frameborder="0">
+    </iframe>
 
   </body>
 </html>
